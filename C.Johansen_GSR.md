@@ -48,10 +48,6 @@ Figure 1: this figure would include information of the traits, and one of the ma
 
 Figure 2: this figure would be from aim 2, with a manhattan plot of the black module, and some manhattan plots from eQTL from genes within the black module, hopefully with an example with the same peak and maybe one without.
 
-3. Next step, Qx statistic [Berg and Coop]
-    - use the top QTL from a GWAS to look for adaptation among populations for that trait, or on those genes.
-    - am I using QTL from WGCNA or from trait GWAS?
-
 The next step is to collect the top SNPs (top 200 SNPs) and to use the Q_x statistic described by Berg and Coop [1] to look for signatures of selection on polygenic traits.
 
 #########
