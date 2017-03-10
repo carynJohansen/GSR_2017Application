@@ -1,8 +1,4 @@
-#########
-Introduction
-Relevance and Justification
-
-# Title: Transcriptomic data dimension reduction as method to characterize genetic architecture of maize quantitative traits
+###  Transcriptomic data dimension reduction as method to characterize genetic architecture of maize quantitative traits
 
 Many traits in plants that are important to both humans and to plant populations are quantitative traits, i.e. they have multiple, sometimes are large number of genes controlling that trait. Plant traits such as yield, height, and stem thickness, are quantitative, and have been under selective pressure from both humans and their environment. During the domestication process, humans have altered the genetic architecture of crop plants in ways analogous to local polygenic adaptation: small allele frequency shifts at many different loci. Certain large effect loci have been associated with the domestication process, such as teosinte branching 1 (tb1). However, tb1 has been shown to only explain X, sometimes as small as Y%, of the phenotype [citation]. This is true for other plant QTL, indicating there is much the plant science community does not know about quantitative traits and their genetic architecture.
 
@@ -31,33 +27,26 @@ Starting with gene expression and phenotype data publically available from a mai
 
 We used the WGCNA (weighted correlation network analysis) R package to generate correlated gene clusters based on expression patterns [3]. The network analysis generated 15 gene modules that had a range of 30 genes to 7934 genes per module. WGCNA generates the module eigengene, which is the first principal component for that module - or can be thought of as the expression levels that best represents all the genes in that module.
 
-We used GEMMA (genome-wide efficient mixed-model association) [5] to run the the GWA analyses, with the allowed missing frequency increased to 10% (compared to the standard 5%). The model for the GWA used was:
+We used GEMMA (genome-wide efficient mixed-model association) [5] to run the the GWA analyses, with the allowed missing frequency increased to 10% (compared to the standard 5%). The model used for the GWA was:
 $y = x\beta + u + \epsilon$
 
-Where y is the n-vector of traits, x is the nxp matrix of marker genotypes, \beta is the effect size of the marker. $u$ is the multivariate normal distribution vector of random effects, which includes the a relatedness matrix to correct for population structure in the analysis. The error, \epsilon, is also a multivariate normal distribution.
+Where y is the n-vector of traits, x is the n-vector of marker genotypes, \beta is the effect size of the marker. $u$ is the multivariate normal distribution vector of random effects, which includes the a relatedness matrix to correct for population structure in the analysis. The error, \epsilon, is also a multivariate normal distribution.
 
 
 #########
 Project Progress
 
 
-First, I looked for QTL associated with trait values. There were few significant QTL associated to the traits, though there were X SNPs that were significant (Figure 2), but these may have been false positives. 
+	First, I looked for QTL associated with trait values. There were few significant QTL associated to the traits, though there were X SNPs that were significant (Figure 2), but these may have been false positives. 
 
-2.a. WGCNA Modules
-    - about the modules:
-        - 13 modules, with the range of Y-Z genes in each module
-    - GWAS on the eigengenes of the modules
-        - eigengene is the first principal component of the expression data of the genes within the module
 
-Next, I used GEMMA to calculate the genetic associations between the module eigengenes and the population genetic markers. These again produced few significant peaks, though the Black module (383 genes) had a significant and clear peak in chromosome 3 (Figure 2). This peak contained the floral transcription factor zag2. However, zag2 is not included in the Black module, indicating possible trans-regulation by a gene in the Black module. Most of the significant SNPs in the 
+	Next, I used GEMMA to calculate the genetic associations between the module eigengenes and the population genetic markers. These again produced few significant peaks, though the Black module (414 genes) had a significant and clear peak in chromosome 3 (Figure 2). This peak contained the floral transcription factor zag2. However, zag2 is not one of the genes in the Black module (green regions in Figure 2), indicating possible trans-regulation by a gene in the Black module. Most of the significant SNPs in the 
 
-2.b. eQTL on expression data of genes
-    - 48,136 number of genes [this is not the right number, I thought it was 15K]
-    - comparing genes within module to the module eigengene GWAS results (Figure 1)
-    - cis and trans effects of SNPs on module eigengenes
+	In order to assess the GWA on the module eigengenes, I performed a GWA on the expression levels of each of the 15,205 genes included in the WGCNA modules. [This is currently running. I was planning on putting a few examples into the figure 2, which would have the manhattan plot for the module and a few manhattan plots for some genes in the module.] 
 
-Figure 1: this figure includes results from Aim 2.
-    a module GWAS results (midnight blue module looked good), with some genes from within the module and their QTL
+Figure 1: this figure would include information of the traits, and one of the manhattan plot results from aim 1.
+
+Figure 2: this figure would be from aim 2, with a manhattan plot of the black module, and some manhattan plots from eQTL from genes within the black module, hopefully with an example with the same peak and maybe one without.
 
 3. Next step, Qx statistic [Berg and Coop]
     - use the top QTL from a GWAS to look for adaptation among populations for that trait, or on those genes.
@@ -68,20 +57,11 @@ The next step is to collect the top SNPs (top 200 SNPs) and to use the Q_x stati
 #########
 Next Steps and Future Plans
 
-Measures of selection
-    - from the GWAS on traits (or on modules), select the top X SNPs from the GWAS
-    - get the direction of the effect
-    - calculate Qx
+The next first step is to look for patterns of selection on quantitative traits using the $Q_x$ statistic as definied by Berg and Coop [1]. The $Q_x$ statistic measures if there is more variability in the genetic values among populations than can be explained by drift or relatedness, which would indicate local adpatation on that trait. In order to calculate the $Q_x$ statistic for the maize populations used, I will use the top 200 SNPs from the each module GWA result.  
 
-Plans for how this can incorporate with the highland project
-    - using data gathered from the maize highland project,
-        look for maize selection to stressful environmental conditions
+In addition to the inbred maize lines from the Hirsch et al dataset, the Ross-Ibarra lab has access to teosinte population genotype and phenotype data. I plan on using this approach to look for selection among teosinte populations. 
 
-Characterize the usefulness of this approach
-    - is it accurate?
-    - what is the possible false-positive rate [why does Qx not create false positives again?]
-
-
+The final goal is to characterize the usefulness of this approach. Does using WGCNA, or other methods to reduce data dimension address some of the issues of characterizing the genetic architecture underlying quantitative traits? Maize and teosinte provide well characterized and well studied models to answer this questions, as there is an abundance of data and diverse populations that have been subjected to various environmental conditions, both human and natural.
 
 #########
 Citations
