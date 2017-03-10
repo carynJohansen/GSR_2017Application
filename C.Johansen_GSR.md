@@ -37,12 +37,12 @@ Where y is the n-vector of traits, x is the n-vector of marker genotypes, \beta 
 Project Progress
 
 
-	First, I looked for QTL associated with trait values. There were few significant QTL associated to the traits, though there were X SNPs that were significant (Figure 2), but these may have been false positives. 
+First, I looked for QTL associated with trait values. There were few significant QTL associated to the traits, though there were X SNPs that were significant (Figure 2), but these may have been false positives. 
 
 
-	Next, I used GEMMA to calculate the genetic associations between the module eigengenes and the population genetic markers. These again produced few significant peaks, though the Black module (414 genes) had a significant and clear peak in chromosome 3 (Figure 2). This peak contained the floral transcription factor zag2. However, zag2 is not one of the genes in the Black module (green regions in Figure 2), indicating possible trans-regulation by a gene in the Black module. Most of the significant SNPs in the 
+Next, I used GEMMA to calculate the genetic associations between the module eigengenes and the population genetic markers. These again produced few significant peaks, though the Black module (414 genes) had a significant and clear peak in chromosome 3 (Figure 2). This peak contained the floral transcription factor zag2. However, zag2 is not one of the genes in the Black module (green regions in Figure 2), indicating possible trans-regulation by a gene in the Black module. Most of the significant SNPs in the 
 
-	In order to assess the GWA on the module eigengenes, I performed a GWA on the expression levels of each of the 15,205 genes included in the WGCNA modules. [This is currently running. I was planning on putting a few examples into the figure 2, which would have the manhattan plot for the module and a few manhattan plots for some genes in the module.] 
+In order to assess the GWA on the module eigengenes, I performed a GWA on the expression levels of each of the 15,205 genes included in the WGCNA modules. [This is currently running. I was planning on putting a few examples into the figure 2, which would have the manhattan plot for the module and a few manhattan plots for some genes in the module.] 
 
 Figure 1: this figure would include information of the traits, and one of the manhattan plot results from aim 1.
 
