@@ -1,14 +1,35 @@
 ###  Transcriptomic data dimension reduction as method to characterize genetic architecture of maize quantitative traits
 
-Many traits in plants that are important to both humans and to plant populations are quantitative traits, i.e. they have multiple, sometimes are large number of genes controlling that trait. Plant traits such as yield, height, and stem thickness, are quantitative, and have been under selective pressure from both humans and their environment. During the domestication process, humans have altered the genetic architecture of crop plants in ways analogous to local polygenic adaptation: small allele frequency shifts at many different loci. Certain large effect loci have been associated with the domestication process, such as teosinte branching 1 (tb1). However, tb1 has been shown to only explain X, sometimes as small as Y%, of the phenotype [citation]. This is true for other plant QTL, indicating there is much the plant science community does not know about quantitative traits and their genetic architecture.
+Many traits in plants that are important to both humans and to plant populations are quantitative traits, i.e. they have
+multiple, sometimes are large number of genes controlling that trait. Plant traits such as yield, height, and stem thickness,
+are quantitative, and have been under selective pressure from both humans and their environment. During the domestication
+process, humans have altered the genetic architecture of crop plants in ways analogous to local polygenic adaptation: small
+allele frequency shifts at many different loci. Certain large effect loci have been associated with the domestication process,
+such as teosinte branching 1 (tb1). However, tb1 has been shown to only explain X, sometimes as small as Y%, of the phenotype
+[citation]. This is true for other plant QTL, indicating there is much the plant science community does not know about
+quantitative traits and their genetic architecture.
 
-A widely used approach to gene discovery or analysis for quantitative traits is a top-down approach [4]. This method begins with phenotype data, and associates possibly causative regions of the genome to those traits, using genome wide association (GWA) methods. A list of candidate genes can be generated from these regions, known as quantitative trait loci (QTL). Here, we plan to use phenotypic data and expression data to generate candidate QTL underlying quantitative traits, and use any candidate genes and their effect sizes to look for patterns of local adaptation among maize populations.
+A widely used approach to gene discovery or analysis for quantitative traits is a top-down approach [4]. This method begins
+with phenotype data, and associates possibly causative regions of the genome to those traits, using genome wide association
+(GWA) methods. A list of candidate genes can be generated from these regions, known as quantitative trait loci (QTL). Here, we
+plan to use phenotypic data and expression data to generate candidate QTL underlying quantitative traits, and use any candidate
+genes and their effect sizes to look for patterns of local adaptation among maize populations.
 
-Detecting all contributing genes to the quantitative trait is difficult. Confounding factors of a GWAS analysis include environmental impacts, sample size, and quality of genetic information, amount of SNPs used. In addition, there are several statistical challenges to identifying causal QTL. In a GWAS, there is more power to detect common alleles, and alleles with large effect sizes, and this will cause an “overestimation of the average effect size and frequency of GWAS-associated alleles” [3]. In addition, there can be an excess in false positives from low-frequency alleles if the original phenotype data is skewed [3]. A limited sample size can underestimate the number of QTLs affecting a trait due to multiple loci being misidentified as a single QTL with a large effect[3]. 
+Detecting all contributing genes to the quantitative trait is difficult. Confounding factors of a GWAS analysis include
+environmental impacts, sample size, and quality of genetic information, amount of SNPs used. In addition, there are several
+statistical challenges to identifying causal QTL. In a GWAS, there is more power to detect common alleles, and alleles with
+large effect sizes, and this will cause an “overestimation of the average effect size and frequency of GWAS-associated alleles”
+[3]. In addition, there can be an excess in false positives from low-frequency alleles if the original phenotype data is skewed
+[3]. A limited sample size can underestimate the number of QTLs affecting a trait due to multiple loci being misidentified as a
+single QTL with a large effect[3]. 
 
-It is important to develop methods to accurately detect small-effect QTL. Discovering the loci underlying plant traits is important to both breeders and crop breeding programs, and to further elucidating plant genetic networks, plant physiology, and plant evolution.
+It is important to develop methods to accurately detect small-effect QTL. Discovering the loci underlying plant traits is
+important to both breeders and crop breeding programs, and to further elucidating plant genetic networks, plant physiology, and
+plant evolution.
 
-In this project, I aim to leverage publicly available data, and data generated by projects within the Ross-Ibarra to investigate methods of reducing genetic information to facilitate the characterization the genetic architecture of traits under selection using a top-down approach. The
+In this project, I aim to leverage publicly available data, and data generated by projects within the Ross-Ibarra lab to
+investigate methods of reducing genetic information to facilitate the characterization the genetic architecture of traits under
+selection using a top-down approach. The
 
 #########
 Goals and Objectives
@@ -23,41 +44,68 @@ Goals and Objectives
 #########
 Project Outline
 
-Starting with gene expression and phenotype data publically available from a maize study performed by Hirsch et al (2015?), and with genome by sequencing data from The Maize Diversity Project (Panzea, citation), the original dataset was filtered based on gene expression and percent missing data. The final analyses were performed with 292 lines of maize (Figure 1), 15,206 genes, and 133,943 SNPs. [Can I have some measure of coverage in there, or something about quality of the SNPs, citing panzea paper?] The 292 lines of maize represent 14 different maize families (Figure 1).
+Starting with gene expression and phenotype data publically available from a maize study performed by Hirsch et al (2015?), and
+with genome by sequencing data from The Maize Diversity Project (Panzea, citation), the original dataset was filtered based on
+gene expression and percent missing data. The final analyses were performed with 292 lines of maize (Figure 1), 15,206 genes,
+and 133,943 SNPs. [Can I have some measure of coverage in there, or something about quality of the SNPs, citing panzea paper?]
+The 292 lines of maize represent 14 different maize families (Figure 1).
 
-We used the WGCNA (weighted correlation network analysis) R package to generate correlated gene clusters based on expression patterns [3]. The network analysis generated 15 gene modules that had a range of 30 genes to 7934 genes per module. WGCNA generates the module eigengene, which is the first principal component for that module - or can be thought of as the expression levels that best represents all the genes in that module.
+We used the WGCNA (weighted correlation network analysis) R package to generate correlated gene clusters based on expression
+patterns [3]. The network analysis generated 15 gene modules that had a range of 30 genes to 7934 genes per module. WGCNA
+generates the module eigengene, which is the first principal component for that module - or can be thought of as the 
+expression levels that best represents all the genes in that module.
 
-We used GEMMA (genome-wide efficient mixed-model association) [5] to run the the GWA analyses, with the allowed missing frequency increased to 10% (compared to the standard 5%). The model used for the GWA was:
+We used GEMMA (genome-wide efficient mixed-model association) [5] to run the the GWA analyses, with the allowed missing 
+frequency increased to 10% (compared to the standard 5%). The model used for the GWA was:
 $y = x\beta + u + \epsilon$
 
-Where y is the n-vector of traits, x is the n-vector of marker genotypes, \beta is the effect size of the marker. $u$ is the multivariate normal distribution vector of random effects, which includes the a relatedness matrix to correct for population structure in the analysis. The error, \epsilon, is also a multivariate normal distribution.
+Where y is the n-vector of traits, x is the n-vector of marker genotypes, \beta is the effect size of the marker. $u$ is the
+multivariate normal distribution vector of random effects, which includes the a relatedness matrix to correct for population 
+structure in the analysis. The error, \epsilon, is also a multivariate normal distribution.
 
 
 #########
 Project Progress
 
 
-First, I looked for QTL associated with trait values. There were few significant QTL associated to the traits, though there were X SNPs that were significant (Figure 2), but these may have been false positives. 
+First, I looked for QTL associated with trait values. There were few significant QTL associated to the traits, though there
+were X SNPs that were significant (Figure 2), but these may have been false positives. 
 
 
-Next, I used GEMMA to calculate the genetic associations between the module eigengenes and the population genetic markers. These again produced few significant peaks, though the Black module (414 genes) had a significant and clear peak in chromosome 3 (Figure 2). This peak contained the floral transcription factor zag2. However, zag2 is not one of the genes in the Black module (green regions in Figure 2), indicating possible trans-regulation by a gene in the Black module. Most of the significant SNPs in the 
+Next, I used GEMMA to calculate the genetic associations between the module eigengenes and the population genetic markers.
+These again produced few significant peaks, though the Black module (414 genes) had a significant and clear peak in chromosome
+3 (Figure 2). This peak contained the floral transcription factor zag2. However, zag2 is not one of the genes in the Black
+module (green regions in Figure 2), indicating possible trans-regulation by a gene in the Black module. Most of the
+significant SNPs in the 
 
-In order to assess the GWA on the module eigengenes, I performed a GWA on the expression levels of each of the 15,205 genes included in the WGCNA modules. [This is currently running. I was planning on putting a few examples into the figure 2, which would have the manhattan plot for the module and a few manhattan plots for some genes in the module.] 
+
+In order to assess the GWA on the module eigengenes, I performed a GWA on the expression levels of each of the 15,205 genes
+included in the WGCNA modules. [This is currently running. I was planning on putting a few examples into the figure 2, which
+would have the manhattan plot for the module and a few manhattan plots for some genes in the module.] 
 
 Figure 1: this figure would include information of the traits, and one of the manhattan plot results from aim 1.
 
-Figure 2: this figure would be from aim 2, with a manhattan plot of the black module, and some manhattan plots from eQTL from genes within the black module, hopefully with an example with the same peak and maybe one without.
+Figure 2: this figure would be from aim 2, with a manhattan plot of the black module, and some manhattan plots from eQTL from
+genes within the black module, hopefully with an example with the same peak and maybe one without.
 
-The next step is to collect the top SNPs (top 200 SNPs) and to use the Q_x statistic described by Berg and Coop [1] to look for signatures of selection on polygenic traits.
+The next step is to collect the top SNPs (top 200 SNPs) and to use the Q_x statistic described by Berg and Coop [1] to look
+for signatures of selection on polygenic traits.
 
 #########
 Next Steps and Future Plans
 
-The next first step is to look for patterns of selection on quantitative traits using the $Q_x$ statistic as definied by Berg and Coop [1]. The $Q_x$ statistic measures if there is more variability in the genetic values among populations than can be explained by drift or relatedness, which would indicate local adpatation on that trait. In order to calculate the $Q_x$ statistic for the maize populations used, I will use the top 200 SNPs from the each module GWA result.  
+The next first step is to look for patterns of selection on quantitative traits using the $Q_x$ statistic as definied by Berg
+and Coop [1]. The $Q_x$ statistic measures if there is more variability in the genetic values among populations than can be
+explained by drift or relatedness, which would indicate local adpatation on that trait. In order to calculate the $Q_x$
+statistic for the maize populations used, I will use the top 200 SNPs from the each module GWA result.  
 
-In addition to the inbred maize lines from the Hirsch et al dataset, the Ross-Ibarra lab has access to teosinte population genotype and phenotype data. I plan on using this approach to look for selection among teosinte populations. 
+In addition to the inbred maize lines from the Hirsch et al dataset, the Ross-Ibarra lab has access to teosinte population
+genotype and phenotype data. I plan on using this approach to look for selection among teosinte populations. 
 
-The final goal is to characterize the usefulness of this approach. Does using WGCNA, or other methods to reduce data dimension address some of the issues of characterizing the genetic architecture underlying quantitative traits? Maize and teosinte provide well characterized and well studied models to answer this questions, as there is an abundance of data and diverse populations that have been subjected to various environmental conditions, both human and natural.
+The final goal is to characterize the usefulness of this approach. Does using WGCNA, or other methods to reduce data dimension
+address some of the issues of characterizing the genetic architecture underlying quantitative traits? Maize and teosinte 
+provide well characterized and well studied models to answer this questions, as there is an abundance of data and diverse 
+populations that have been subjected to various environmental conditions, both human and natural.
 
 #########
 Citations
