@@ -2,16 +2,16 @@
 
 Many traits in plants that are important to both humans and to plant populations are quantitative traits, i.e. there have
 multiple genes, sometimes a large number, contributing to that trait. Height is classic example of a human quantitative
-trait: it a highly heritbale trait, with continuous, non-discrete values. The genetics underlying quantitative traits are
+trait: it a highly heritable trait, with continuous, non-discrete values. The genetics underlying quantitative traits are
 discovered by association with trait variation in a method called genome wide association (GWA). In human height, there are
 with as many as 50 quantitative trait loci (QTLs) that contribute to height as shown by GWA studies, but discovered 
-genetic variation does not accound for most of the trait variation [6]. This is also true for plant quantitative traits.
+genetic variation does not account for most of the trait variation [6]. This is also true for plant quantitative traits.
 
 Defining and mapping plant quantitative traits is difficult but important. Developing better methods to better characterize
 quantitative traits in plants would be
 better for mapping traits of interest, discovering the genetic architecture for an important trait, and finding loci that
 are under selection. The overall goal of this project is to
-combine different data types and diffent but established methods for discovering QTL to better characterize the 
+combine different data types and different but established methods for discovering QTL to better characterize the 
 genetic architecture underlying quantitative traits.
 
 A widely used approach to gene discovery or analysis for quantitative traits is a top-down approach [4]. This method begins
