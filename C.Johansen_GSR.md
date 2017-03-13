@@ -1,15 +1,20 @@
 ###  Quantitative genetics of adaptation
 
 Many traits in plants that are important to both humans and to plant populations are quantitative traits, i.e. there have
-multiple genes, sometimes a large number, contributing to that trait. Height is classic example of a human quantitative
-trait: it a highly heritable trait, with continuous, non-discrete values. The genetics underlying quantitative traits are
-discovered by association with trait variation in a method called genome wide association (GWA). In human height, there are
-with as many as 50 quantitative trait loci (QTLs) that contribute to height as shown by GWA studies, but discovered 
-genetic variation does not account for most of the trait variation [6]. This is also true for plant quantitative traits.
+multiple genes, sometimes a large number, contributing to that trait. Yield is classic example of a quantitative
+trait in plants: it a highly heritable trait, with continuous, non-discrete values. 
+The genetics underlying quantitative traits are
+discovered by association with trait variation in a method called genome wide association (GWA). In studies on yeild,
+the number of quantitative trait loci (QTLs) that contribute to yeild as shown by GWA studies has been show to be around 30,
+but the effect sizes of those QTL (the genetic variation) do not account for most of the phenotype trait variation [7]. 
+The genetic architecture of quantitative traits is a black box in quantitative genetics.
 
+The goal of this projects is rethink the use to gene expression data as a phenotypic trait for a GWA study, and
+to combine common methods of characterizing the genetic architecture of quantitative traits in maize for an improved outcome
+of QTL discovery.
 Defining and mapping plant quantitative traits is difficult but important. Developing better methods to better characterize
 quantitative traits in plants would be
-better for mapping traits of interest, discovering the genetic architecture for an important trait, and finding loci that
+improve mapping traits of interest, discovering the genetic architecture for an important trait, and finding loci that
 are under selection. The overall goal of this project is to
 combine different data types and different but established methods for discovering QTL to better characterize the 
 genetic architecture underlying quantitative traits.
@@ -129,6 +134,8 @@ Citations
 4. Ross-Ibarra, J., Morrell, P. L. & Gaut, B. S. Plant domestication, a unique opportunity to identify the genetic basis of adaptation. PNAS 104, 8641–8648 (2007).
 5. Zhou, X., Stephens, M. Genome-wide efficient mixed-model analysis for association studies. Nature Genetics 44, 821-824 (2012). 
 6. Hill, W. G. Understanding and using quantitative genetic variation. Philosophical Transactions of the Royal Society of London B: Biological Sciences 365, 73–85 (2010).
+7. Huang, Y.-F. et al. The Genetic Architecture of Grain Yield and Related Traits in Zea maize L. Revealed by Comparing Intermated and Conventional Populations. Genetics 186, 395–404 (2010).
+
 
 
 
