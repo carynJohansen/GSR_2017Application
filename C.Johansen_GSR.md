@@ -1,126 +1,103 @@
 ###  Quantitative genetics of adaptation
 
-Many traits in plants that are important to both humans and to plant populations are quantitative traits, i.e. there have multiple genes, sometimes a large number, contributing to that trait. 
-Yield is classic example of a quantitative trait in plants: it a highly heritable trait, with continuous, non-discrete values.
-The genetics underlying quantitative traits are discovered by association with trait variation in a method called genome wide association (GWA). 
-In studies on yield, the number of quantitative trait loci (QTLs) that contribute to yield as shown by GWA studies has been show to be around 30, but the effect sizes of those QTL (the genetic variation) do not account for most of the phenotype trait variation [7]. 
-The genetic architecture of quantitative traits is a black box in quantitative genetics.
+\documentclass[11pt]{article}
 
-The goal of this projects is rethink the use to gene expression data as a phenotypic trait for a GWA study, and to combine common methods of characterizing the genetic architecture of quantitative traits in maize for an improved outcome of QTL discovery.
-Defining and mapping plant quantitative traits is important but difficult. 
-The main challenge of correctly identifying a QTL is correctly identifying a small signal in complicated noise. 
-There are many factors that can confound the results if a GWA study, including sample size, environmental interactions with trait values, population structure, and statistical biases that favor intermediate allele frequencies or overestimating QTL 
-effect sizes [3]. 
-Developing better methods to better characterize quantitative traits in plants would be improve mapping traits of interest, discovering the genetic architecture for an important trait, and finding loci that are under selection. 
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm,marginparwidth=1.75cm]{geometry}
+
+%% Useful packages
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{color}
+
+\definecolor{jriblue}{rgb}{0.6, 0.8, 0.9}
+
+\newcommand{\cj}[1]{\todo[size=\scriptsize, color=green]{#1}}
+\newcommand{\jri}[1]{\todo[size=\scriptsize, color=jriblue]{#1}}
+\newcommand{\dr}[1]{\todo[size=\scriptsize, color=orange]{#1}}
+\newcommand{\citex}[1]{\textbf{\textcolor{red}{CITE(#1)}}}
+\newcommand{\X}{\textbf{\textcolor{red}{X}}}
+
+\title{}
+
+\begin{document}
+\textbf{Quantitative Genetics of Adaptation}
+
+While Mendel's initial genetic work focused on traits with discrete variation, most plant phenotypes --- from height to flowering time to yield --- are quantitative, showing continuous, non-discrete variation and are usually governed by a large number of  loci.
+Genome wise association (GWA) studies use genotype markers to identify the genetics underlying quantitative traits by associating trait variation with a region of the genome called a quantitative trait locus (QTL).
+These studies have been successful at identifying ... \jri{cite a few examples}
+Nonetheless, GWA face a number of challenges in correctly identifying small genetic signals in complicated phenotypic variation. 
+There are many factors that can confound the results of a GWA study, including sample size, environmental interactions, population structure, and statistical biases that favor intermediate allele frequencies or overestimating QTL effect sizes \cite{josephs2017can}. 
+As a result, the QTL identified rarely account for most of the phenotype trait variation observed \cite{huang2010genetic}, and we still know very little about the number of loci and effect size of quantitative traits in plants.
+
+Developing methods to better characterize quantitative traits in plants is important for identifying genes underlying traits of interest, breeding improved crops, and understanding how phenotypes evolve in nature. 
 The overall goal of this project is to combine different data types and different but established methods for discovering QTL to better characterize the genetic architecture underlying quantitative traits.
+Here, I propose to use gene expression as a model quantitative trait to characterize the genetic architecture of quantitative traits in \textit{Zea mays} populations for an improved outcome of QTL discovery.  
+I also aim to use the results of this approach to measure selection on quantitative traits in both maize and in teosinte populations.
 
-A widely used approach to gene discovery or analysis for quantitative traits is the top-down approach [4]. 
-This method begins with phenotype data, and uses GWA to associate possible causative regions of the genome to those traits. 
-Another approach is to use RNA expression values as a trait in a GWA and associate genomic markers with changes in gene expression. 
+A common approach is to use physiological phenotypes, such as height, for the traits in a GWA study.
+Another approach is to use gene expression data as the trait in a GWA and associated genetic markers are called expression QTL (eQTL).
 This can show cis and trans regulation of the expression of a gene, as it can uncover a QTL in or near the gene region (cis-acting), or a QTL far away from the gene that has an impact on gene expression (trans-acting). 
+A potentially powerful use of gene expression lies in it's ability to be clustered by co-regulation patterns.
+I clustered genes by their expression patterns and generate a representative gene expression value of that cluster as a trait.
+That representative gene value for the cluster can then be used the trait in a GWA, and any associated QTL are possible cis or trans regulators of the known genes within the cluster.
+Using gene expression as a trait in GWA is a so far known but under-explored method to identify QTL.
 
-A potentially powerful combination of these two approaches lies in the ability of gene expression to be clustered by co-regulated genes. 
-We will cluster genes by their expression patterns and use a representative gene expression value of that cluster as a trait for a GWA study.
+In this project, I aim to use publicly available data, and data generated by projects within the Ross-Ibarra and Runcie labs to meet the following aims:
 
+\textbf{1.} What is the genetic architecture underlying phenotypic traits and RNA co-expression clusters?
 
-Here, we
-plan to leverage publicly available data and data generated in the Ross-Ibarra and Runcie labs, including both phenotypic
-data and expression data,
-to generate candidate QTL underlying quantitative traits, and use any candidate
-genes and their effect sizes to look for patterns of local adaptation among maize populations.
+\textbf{2.} How well do each of these approaches explain the variance of their quantitative traits? \jri{i like combining these two}
 
+\textbf{3.} Is there evidence of local adaptation of these quantitative traits among the populations samples?
 
-In this project, I aim to use publicly available data, and data generated by projects within the Ross-Ibarra and Runcie labs
-to meet the following aims:
+\textbf{4.}  Can this approach be used to identify quantitative traits that have been under selection in teosinte populations? \jri{i would combine 3 and 4 too}
 
-1. What is the genetic architecture underlying agronomic traits measured by Hirsch et al?
-2. What is the genetic architecture underlying the gene co-expression modules?
-   2.a. How similar are the module eigengenes GWAS with the eQTL of genes within the module?
-3. Is there evidence of local adaptation of these quantitative traits among the populations samples?
-4. Can we use this approach in other populations? Can I use this approach in teosinte populations that have been subjected to strong environmental selection on a regional scale?
+To address \textbf{aim 1}, I will look for significant QTL for agronomic traits using phenotype and expression data and gene expression data collected by \cite{hirsch2014insights} (Figure \ref{manhattan}) and genotype marker data by \cite{romay2013comprehensive}.
+In my preliminary analyses I have analyzed 13 different agronomic traits from 292 maize lines. 
+I used GEMMA \cite{zhou2012genome} to identify QTL for each trait and calculate the effect sizes for each marker using a linear mixed model that took population structure into account.
 
-Or, a similar but different set of aims.
+To cluster genes by co-expression for the \textbf{aim 1} GWA on gene clusters, we used the R package WGCNA (weighted correlation network analysis) \cite{langfelder2008wgcna} and gene expression data for 15,205 genes \cite{hirsch2014insights}.
+The network analysis generated 15 gene modules that had a range of 30 genes to 7934 genes per cluster.
+WGCNA generates a representative gene for all the genes in a cluster, and the values of this "gene" are used in the GWA. 
+One gene cluster (labeled the "black" gene cluster) had a clear peak on chromosome 3 (Figure \ref{manhattan}B).
+However, the gene located within this peak, the floral transcription factor \textit{zag2}, is not one of the 414 genes in the black gene cluster, indicating a likely example of trans regulation.  \jri{yes move this before the phenotype results}
 
-1. How much of the genetic variation do QTL effect sizes calculated using phenotype data explain for highly
-heritable quantitative traits?
+The results of the GWA for the phenotypic traits had a total of 130 significant QTL (p-value < 1e-4) across all 13 traits, and no clear peaks indicating large effect QTL (Figure \ref{manhattan}A). 
+This may be due to the highly quantitative nature of the traits or due to some confounding feature of the GWA.
 
-2. How does that compare to the amount of genetic variation that the QTL effect sizes calculated from gene 
-cluster explain for a heritable quantitative trait?
+\begin{figure}
+\includegraphics[width=0.5\linewidth]{figures/stalkman.pdf}
+\includegraphics[width=0.5\linewidth]{figures/black_marked.pdf}
+\caption{Manhattan plots showing GWA results for \textbf{A.} stalk diameter and \textbf{B.} the black expression module. Green dots in \textbf{B} indicate the location of genetic markers in genes included in the Black cluster.}
+\label{manhattan}
+\end{figure}
 
-3. Can RNA expression data be used to show local adaptation on quantitative traits?
+To assess the success of the GWA approaches in \textbf{aim 1}, I will then use modeling approaches \cite{yang2011gcta} to estimate how much of the genetic variance for phenotypes and expression can be explained by the significant markers from GWA.
 
- 4. Can this approach be used in teosinte populations that have been subjected to strong environmental 
- selection on a regional scale?
+\jri{another sentence or so about what you will do with these results. what if they suck? or perhaps instead a sentence or two about how expression clustering lets you evaluate these approaches because you *know* the underlying loci}
 
-#########
-Project Outline
+After characterizing the genetic architecture of phenotypes and gene expression, I propose in \textbf{aim 3}, to search for patterns of selection on quantitative traits using the polygenic \cj{can I say quantitative here? to keep it simple and reduce jargon?} approach described in \cite{berg2014population}. 
+The $Q_x$ statistic proposed by \cite{berg2014population} measures if there is more variability in the genetic values among populations than can be explained by drift or relatedness, which would indicate local adaptation on that trait.  \jri{nice explanation}
+I will use the top 200 QTL from my GWA results to calculate $Q_x$ and evaluate covariance between QTL allele frequency and the direction of the QTL effects. \jri{on what samples? in what populations?}
 
-The first aim involved setting up a GWA on agronomic traits using phenotype data collected by \cite{hirsch2014insights} and genotype marker data by \cite{romay2013comprehensive}. I used 292 maize lines from a variety of population 
-groups, and thirteen different traits, including stalk diameter and growing degree
-days to flowering.
-
-Starting with gene expression and phenotype data publically available from a maize study performed by Hirsch et al (2015?), and
-with genome by sequencing data from The Maize Diversity Project (Panzea, citation), the original dataset was filtered based on
-gene expression and percent missing data. The final analyses were performed with 292 lines of maize (Figure 1), 15,206 genes,
-and 133,943 SNPs. [Can I have some measure of coverage in there, or something about quality of the SNPs, citing panzea paper?]
-The 292 lines of maize represent 14 different maize families (Figure 1).
-
-We used the WGCNA (weighted correlation network analysis) R package to generate correlated gene clusters based on expression
-patterns [3]. The network analysis generated 15 gene modules that had a range of 30 genes to 7934 genes per module. WGCNA
-generates the module eigengene, which is the first principal component for that module - or can be thought of as the 
-expression levels that best represents all the genes in that module.
-
-We used GEMMA (genome-wide efficient mixed-model association) [5] to run the the GWA analyses, with the allowed missing 
-frequency increased to 10% (compared to the standard 5%). The model used for the GWA was:
-$y = x\beta + u + \epsilon$
-
-Where y is the n-vector of traits, x is the n-vector of marker genotypes, \beta is the effect size of the marker. $u$ is the
-multivariate normal distribution vector of random effects, which includes the a relatedness matrix to correct for population 
-structure in the analysis. The error, \epsilon, is also a multivariate normal distribution.
+For \textbf{aim 4}, in addition to the inbred maize lines from the phenotype dataset \cite{hirsch2014insights}, the Ross-Ibarra lab has access to teosinte population genotype and phenotype data.
+If this approach proves useful for the inbred maize lines, it might prove useful to show local adaptation of quantitative traits in teosinte populations.
+Maize and teosinte provide well characterized and well studied models to answer this questions, as there is an abundance of data and diverse populations that have been subjected to various environmental conditions, both human and natural.  \jri{i'd end with a general statement about how this project will demonstrate how quant. gen. approaches can use data from mapping populations -- which are abundant for crops -- to learn about the underlying genetics of phenotypes of interest as well as study selection on these phenotypes in natural and agricultural settings}
 
 
-#########
-Project Progress
+\bibliographystyle{naturemag}
+\bibliography{sample}
 
+\end{document}
 
-First, I looked for QTL associated with trait values. There were few significant QTL associated to the traits, though there
-were X SNPs that were significant (Figure 2), but these may have been false positives. 
-
-
-Next, I used GEMMA to calculate the genetic associations between the module eigengenes and the population genetic markers.
-These again produced few significant peaks, though the Black module (414 genes) had a significant and clear peak in chromosome
-3 (Figure 2). This peak contained the floral transcription factor zag2. However, zag2 is not one of the genes in the Black
-module (green regions in Figure 2), indicating possible trans-regulation by a gene in the Black module. Most of the
-significant SNPs in the 
-
-
-In order to assess the GWA on the module eigengenes, I performed a GWA on the expression levels of each of the 15,205 genes
-included in the WGCNA modules. [This is currently running. I was planning on putting a few examples into the figure 2, which
-would have the manhattan plot for the module and a few manhattan plots for some genes in the module.] 
-
-Figure 1: this figure would include information of the traits, and one of the manhattan plot results from aim 1.
-
-Figure 2: this figure would be from aim 2, with a manhattan plot of the black module, and some manhattan plots from eQTL from
-genes within the black module, hopefully with an example with the same peak and maybe one without.
-
-The next step is to collect the top SNPs (top 200 SNPs) and to use the Q_x statistic described by Berg and Coop [1] to look
-for signatures of selection on polygenic traits.
-
-#########
-Next Steps and Future Plans
-
-The next first step is to look for patterns of selection on quantitative traits using the $Q_x$ statistic as definied by Berg
-and Coop [1]. The $Q_x$ statistic measures if there is more variability in the genetic values among populations than can be
-explained by drift or relatedness, which would indicate local adpatation on that trait. In order to calculate the $Q_x$
-statistic for the maize populations used, I will use the top 200 SNPs from the each module GWA result.  
-
-In addition to the inbred maize lines from the Hirsch et al dataset, the Ross-Ibarra lab has access to teosinte population
-genotype and phenotype data. I plan on using this approach to look for selection among teosinte populations. 
-
-The final goal is to characterize the usefulness of this approach. Does using WGCNA, or other methods to reduce data dimension
-address some of the issues of characterizing the genetic architecture underlying quantitative traits? Maize and teosinte 
-provide well characterized and well studied models to answer this questions, as there is an abundance of data and diverse 
-populations that have been subjected to various environmental conditions, both human and natural.
 
 #########
 Citations
