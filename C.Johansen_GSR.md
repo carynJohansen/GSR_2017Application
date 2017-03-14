@@ -1,39 +1,52 @@
-###  Transcriptomic data dimension reduction as method to characterize genetic architecture of maize quantitative traits
+###  Quantitative genetics of adaptation
 
-Many traits in plants that are important to both humans and to plant populations are quantitative traits, i.e. they have
-multiple, sometimes are large number of genes controlling that trait. Plant traits such as yield, height, and stem thickness,
-are quantitative, and have been under selective pressure from both humans and their environment. During the domestication
-process, humans have altered the genetic architecture of crop plants in ways analogous to local polygenic adaptation: small
-allele frequency shifts at many different loci. Certain large effect loci have been associated with the domestication process,
-such as teosinte branching 1 (tb1). However, tb1 has been shown to only explain X, sometimes as small as Y%, of the phenotype
-[citation]. This is true for other plant QTL, indicating there is much the plant science community does not know about
-quantitative traits and their genetic architecture.
+Many traits in plants that are important to both humans and to plant populations are quantitative traits, i.e. there have
+multiple genes, sometimes a large number, contributing to that trait. Yield is classic example of a quantitative
+trait in plants: it a highly heritable trait, with continuous, non-discrete values. 
+The genetics underlying quantitative traits are
+discovered by association with trait variation in a method called genome wide association (GWA). In studies on yield,
+the number of quantitative trait loci (QTLs) that contribute to yield as shown by GWA studies has been show to be around 30,
+but the effect sizes of those QTL (the genetic variation) do not account for most of the phenotype trait variation [7]. 
+The genetic architecture of quantitative traits is a black box in quantitative genetics.
 
-A widely used approach to gene discovery or analysis for quantitative traits is a top-down approach [4]. This method begins
-with phenotype data, and associates possibly causative regions of the genome to those traits, using genome wide association
-(GWA) methods. A list of candidate genes can be generated from these regions, known as quantitative trait loci (QTL). Here, we
-plan to use phenotypic data and expression data to generate candidate QTL underlying quantitative traits, and use any candidate
+The goal of this projects is rethink the use to gene expression data as a phenotypic trait for a GWA study, and
+to combine common methods of characterizing the genetic architecture of quantitative traits in maize for an improved outcome
+of QTL discovery.
+Defining and mapping plant quantitative traits is important but difficult. 
+The main challenge of correctly identifying a QTL is correctly identifying a small signal in complicated noise. There are 
+many factors that can confound the results if a GWA study, including sample size, environmental interactions with trait
+values, population structure, and statistical biases that favor intermediate allele frequencies or overestimating QTL 
+effect sizes [3]. Developing better methods to better characterize
+quantitative traits in plants would be
+improve mapping traits of interest, discovering the genetic architecture for an important trait, and finding loci that
+are under selection. The overall goal of this project is to
+combine different data types and different but established methods for discovering QTL to better characterize the 
+genetic architecture underlying quantitative traits.
+
+A widely used approach to gene discovery or analysis for quantitative traits is the top-down approach [4]. 
+This method begins
+with phenotype data, and uses GWA to associate possible causative regions of the genome to those traits. 
+Another approach is to use RNA expression values as a trait in a GWA and 
+associate genomic markers with changes in gene expression. This can show
+cis and trans regulation of the expression of a gene, as it can
+uncover a QTL in or near the gene region (cis-acting), or a QTL far away from the gene that has an impact on gene expression
+(trans-acting). 
+
+A potentially powerful combination of these two approaches lies in the ability of gene expression to be 
+clustered by co-regulated genes. We will cluster genes by their expression patterns
+and use a representative gene expression value of that cluster as a trait for a 
+GWA study.
+
+
+Here, we
+plan to leverage publicly available data and data generated in the Ross-Ibarra and Runcie labs, including both phenotypic
+data and expression data,
+to generate candidate QTL underlying quantitative traits, and use any candidate
 genes and their effect sizes to look for patterns of local adaptation among maize populations.
 
-Detecting all contributing genes to the quantitative trait is difficult. Confounding factors of a GWAS analysis include
-environmental impacts, sample size, and quality of genetic information, amount of SNPs used. In addition, there are several
-statistical challenges to identifying causal QTL. In a GWAS, there is more power to detect common alleles, and alleles with
-large effect sizes, and this will cause an “overestimation of the average effect size and frequency of GWAS-associated alleles”
-[3]. In addition, there can be an excess in false positives from low-frequency alleles if the original phenotype data is skewed
-[3]. A limited sample size can underestimate the number of QTLs affecting a trait due to multiple loci being misidentified as a
-single QTL with a large effect[3]. 
 
-It is important to develop methods to accurately detect small-effect QTL. Discovering the loci underlying plant traits is
-important to both breeders and crop breeding programs, and to further elucidating plant genetic networks, plant physiology, and
-plant evolution.
-
-In this project, I aim to leverage publicly available data, and data generated by projects within the Ross-Ibarra lab to
-investigate methods of reducing genetic information to facilitate the characterization the genetic architecture of traits under
-selection using a top-down approach. The
-
-#########
-Goals and Objectives
-
+In this project, I aim to use publicly available data, and data generated by projects within the Ross-Ibarra and Runcie labs
+to meet the following aims:
 
 1. What is the genetic architecture underlying agronomic traits measured by Hirsch et al?
 2. What is the genetic architecture underlying the gene co-expression modules?
@@ -115,6 +128,12 @@ Citations
 3. Josephs, E. B., Stinchcombe, J. R. & Wright, S. I. What can genome-wide association studies tell us about the evolutionary forces maintaining genetic variation for quantitative traits? New Phytol 214, 21–33 (2017).
 4. Ross-Ibarra, J., Morrell, P. L. & Gaut, B. S. Plant domestication, a unique opportunity to identify the genetic basis of adaptation. PNAS 104, 8641–8648 (2007).
 5. Zhou, X., Stephens, M. Genome-wide efficient mixed-model analysis for association studies. Nature Genetics 44, 821-824 (2012). 
+6. Hill, W. G. Understanding and using quantitative genetic variation. Philosophical Transactions of the Royal Society of London B: Biological Sciences 365, 73–85 (2010).
+7. Huang, Y.-F. et al. The Genetic Architecture of Grain Yield and Related Traits in Zea maize L. Revealed by Comparing Intermated and Conventional Populations. Genetics 186, 395–404 (2010).
+8. Romay, M. C. et al. Comprehensive genotyping of the USA national maize inbred seed bank. Genome Biology 14, R55 (2013).
+
+
+
 
 
 
