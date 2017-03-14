@@ -130,6 +130,8 @@ Citations
 5. Zhou, X., Stephens, M. Genome-wide efficient mixed-model analysis for association studies. Nature Genetics 44, 821-824 (2012). 
 6. Hill, W. G. Understanding and using quantitative genetic variation. Philosophical Transactions of the Royal Society of London B: Biological Sciences 365, 73–85 (2010).
 7. Huang, Y.-F. et al. The Genetic Architecture of Grain Yield and Related Traits in Zea maize L. Revealed by Comparing Intermated and Conventional Populations. Genetics 186, 395–404 (2010).
+8. Romay, M. C. et al. Comprehensive genotyping of the USA national maize inbred seed bank. Genome Biology 14, R55 (2013).
+
 
 
 
