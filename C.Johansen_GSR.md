@@ -54,6 +54,19 @@ to meet the following aims:
 3. Is there evidence of local adaptation of these quantitative traits among the populations samples?
 4. Can we use this approach in other populations? Can I use this approach in teosinte populations that have been subjected to strong environmental selection on a regional scale?
 
+Or, a similar but different set of aims.
+
+1. How much of the genetic variation do QTL effect sizes calculated using phenotype data explain for highly
+heritable quantitative traits?
+
+2. How does that compare to the amount of genetic variation that the QTL effect sizes calculated from gene 
+cluster explain for a heritable quantitative trait?
+
+3. Can RNA expression data be used to show local adaptation on quantitative traits?
+
+ 4. Can this approach be used in teosinte populations that have been subjected to strong environmental 
+ selection on a regional scale?
+
 #########
 Project Outline
 
