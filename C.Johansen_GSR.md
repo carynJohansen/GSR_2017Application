@@ -1,41 +1,26 @@
 ###  Quantitative genetics of adaptation
 
-Many traits in plants that are important to both humans and to plant populations are quantitative traits, i.e. there have
-multiple genes, sometimes a large number, contributing to that trait. Yield is classic example of a quantitative
-trait in plants: it a highly heritable trait, with continuous, non-discrete values. 
-The genetics underlying quantitative traits are
-discovered by association with trait variation in a method called genome wide association (GWA). In studies on yield,
-the number of quantitative trait loci (QTLs) that contribute to yield as shown by GWA studies has been show to be around 30,
-but the effect sizes of those QTL (the genetic variation) do not account for most of the phenotype trait variation [7]. 
+Many traits in plants that are important to both humans and to plant populations are quantitative traits, i.e. there have multiple genes, sometimes a large number, contributing to that trait. 
+Yield is classic example of a quantitative trait in plants: it a highly heritable trait, with continuous, non-discrete values.
+The genetics underlying quantitative traits are discovered by association with trait variation in a method called genome wide association (GWA). 
+In studies on yield, the number of quantitative trait loci (QTLs) that contribute to yield as shown by GWA studies has been show to be around 30, but the effect sizes of those QTL (the genetic variation) do not account for most of the phenotype trait variation [7]. 
 The genetic architecture of quantitative traits is a black box in quantitative genetics.
 
-The goal of this projects is rethink the use to gene expression data as a phenotypic trait for a GWA study, and
-to combine common methods of characterizing the genetic architecture of quantitative traits in maize for an improved outcome
-of QTL discovery.
+The goal of this projects is rethink the use to gene expression data as a phenotypic trait for a GWA study, and to combine common methods of characterizing the genetic architecture of quantitative traits in maize for an improved outcome of QTL discovery.
 Defining and mapping plant quantitative traits is important but difficult. 
-The main challenge of correctly identifying a QTL is correctly identifying a small signal in complicated noise. There are 
-many factors that can confound the results if a GWA study, including sample size, environmental interactions with trait
-values, population structure, and statistical biases that favor intermediate allele frequencies or overestimating QTL 
-effect sizes [3]. Developing better methods to better characterize
-quantitative traits in plants would be
-improve mapping traits of interest, discovering the genetic architecture for an important trait, and finding loci that
-are under selection. The overall goal of this project is to
-combine different data types and different but established methods for discovering QTL to better characterize the 
-genetic architecture underlying quantitative traits.
+The main challenge of correctly identifying a QTL is correctly identifying a small signal in complicated noise. 
+There are many factors that can confound the results if a GWA study, including sample size, environmental interactions with trait values, population structure, and statistical biases that favor intermediate allele frequencies or overestimating QTL 
+effect sizes [3]. 
+Developing better methods to better characterize quantitative traits in plants would be improve mapping traits of interest, discovering the genetic architecture for an important trait, and finding loci that are under selection. 
+The overall goal of this project is to combine different data types and different but established methods for discovering QTL to better characterize the genetic architecture underlying quantitative traits.
 
 A widely used approach to gene discovery or analysis for quantitative traits is the top-down approach [4]. 
-This method begins
-with phenotype data, and uses GWA to associate possible causative regions of the genome to those traits. 
-Another approach is to use RNA expression values as a trait in a GWA and 
-associate genomic markers with changes in gene expression. This can show
-cis and trans regulation of the expression of a gene, as it can
-uncover a QTL in or near the gene region (cis-acting), or a QTL far away from the gene that has an impact on gene expression
-(trans-acting). 
+This method begins with phenotype data, and uses GWA to associate possible causative regions of the genome to those traits. 
+Another approach is to use RNA expression values as a trait in a GWA and associate genomic markers with changes in gene expression. 
+This can show cis and trans regulation of the expression of a gene, as it can uncover a QTL in or near the gene region (cis-acting), or a QTL far away from the gene that has an impact on gene expression (trans-acting). 
 
-A potentially powerful combination of these two approaches lies in the ability of gene expression to be 
-clustered by co-regulated genes. We will cluster genes by their expression patterns
-and use a representative gene expression value of that cluster as a trait for a 
-GWA study.
+A potentially powerful combination of these two approaches lies in the ability of gene expression to be clustered by co-regulated genes. 
+We will cluster genes by their expression patterns and use a representative gene expression value of that cluster as a trait for a GWA study.
 
 
 Here, we
@@ -69,6 +54,10 @@ cluster explain for a heritable quantitative trait?
 
 #########
 Project Outline
+
+The first aim involved setting up a GWA on agronomic traits using phenotype data collected by \cite{hirsch2014insights} and genotype marker data by \cite{romay2013comprehensive}. I used 292 maize lines from a variety of population 
+groups, and thirteen different traits, including stalk diameter and growing degree
+days to flowering.
 
 Starting with gene expression and phenotype data publically available from a maize study performed by Hirsch et al (2015?), and
 with genome by sequencing data from The Maize Diversity Project (Panzea, citation), the original dataset was filtered based on
